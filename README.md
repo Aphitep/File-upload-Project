@@ -143,7 +143,3 @@ cd backend
 ## Contributing
 
 This project was generated with the assistance of AI tools.
-
-## License
-
-This project is for educational purposes.
