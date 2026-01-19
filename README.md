@@ -143,3 +143,5 @@ cd backend
 ## Contributing
 
 This project was generated with the assistance of AI tools.
+
+> 100 % AI
