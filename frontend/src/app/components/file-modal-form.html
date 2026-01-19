@@ -1,0 +1,26 @@
+<div class="modal modal-open">
+  <div class="modal-box w-11/12 max-w-2xl">
+    <h3 class="font-bold text-lg mb-4">Edit File: {{ filedata?.filename }}</h3>
+
+    <form class="space-y-3">
+      @for (row of filedata?.rows; track $index; let i = $index) {
+        <div class="flex gap-2 items-center">
+          @for (key of objectKeys(row); track $index; let j = $index) {
+            <p>{{ key }}</p>
+            <input
+              class="input input-bordered w-1/3"
+              [(ngModel)]="row[key]"
+              name="{{ key }}-{{ i }}"
+              placeholder="{{ key }}"
+            />
+          }
+        </div>
+      }
+    </form>
+
+    <div class="modal-action">
+      <button class="btn btn-primary" (click)="onSave()">Save</button>
+      <button class="btn" (click)="onCancel()">Cancel</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="flex justify-center">
+  <div class="bg-green-300 shadow-lg rounded-md w-250 h-120">
+    <div class="flex justify-between bg-green-500 text-white p-2">
+      <h3 class="text-lg antialiased">File List</h3>
+      <div class="join">
+        <input type="file" class="file-input text-black" (change)="handleFileChange($event)" />
+        <button class="btn" type="submit" (click)="onUpload()">Upload</button>
+      </div>
+      @if (statusMessage()) {
+        <div class="alert alert-warning">
+          {{ statusMessage() }}
+        </div>
+      }
+    </div>
+    <div class="p-4">
+      @for (file of fileLists; track file) {
+        <file-card [filename]="file"></file-card>
+      }
+    </div>
+  </div>
+</div>

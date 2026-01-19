@@ -1,0 +1,21 @@
+<div class="card card-compact bg-base-100 shadow mb-2">
+  <div class="card-body flex-row justify-between items-center">
+    <h2 class="card-title text-base">
+      {{ filename }}
+    </h2>
+
+    <div class="flex gap-2">
+      <button class="btn btn-sm" (click)="read('detail')">Detail</button>
+      <button class="btn btn-sm btn-primary" (click)="read('edit')">Edit</button>
+    </div>
+  </div>
+</div>
+
+@if (show() && fileData()) {
+  @if (mode() == 'detail') {
+    <file-modal [filedata]="fileData()" (cancelDetail)="handleShow()"></file-modal>
+  }
+  @if (mode() == 'edit') {
+    <file-modal-form [filedata]="fileData()" (cancelForm)="handleShow()"></file-modal-form>
+  }
+}
